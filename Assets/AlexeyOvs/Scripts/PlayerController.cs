@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     PlayerAnimation _playerAnimation; 
     SpriteRenderer _playerSprite;
 
-    float _distanceToGroundForIdle = 0.4f;
+    float _distanceToGroundForIdle = 1.2f;
     WaitForSeconds _waitJumpDoing;
 
     private bool _isPushingHurt;
@@ -127,10 +127,10 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Vector3 leftPos = new Vector3(transform.position.x - 0.05f, transform.position.y, transform.position.z);
+        Vector3 leftPos = new Vector3(transform.position.x - 0.15f, transform.position.y, transform.position.z);
         RaycastHit2D hitLeft = Physics2D.Raycast(leftPos, Vector2.down, _distanceToGroundForIdle, 1<<8);
 
-        Vector3 rightPos = new Vector3(transform.position.x + 0.05f, transform.position.y, transform.position.z);
+        Vector3 rightPos = new Vector3(transform.position.x + 0.15f, transform.position.y, transform.position.z);
         RaycastHit2D hitRight = Physics2D.Raycast(rightPos, Vector2.down, _distanceToGroundForIdle, 1<<8);
 
         Debug.DrawRay(leftPos, Vector2.down * _distanceToGroundForIdle, Color.red);
