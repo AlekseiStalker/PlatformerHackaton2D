@@ -6,7 +6,12 @@ using UnityEngine.EventSystems;
 public class MoveLeftButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
-    public PlayerController PlayerController;
+    PlayerController PlayerController;
+
+    private void Start()
+    {
+        PlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); 
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
