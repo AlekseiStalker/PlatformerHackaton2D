@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Stviga/Scenes/Menu.unity
+    guid: c217a650aff5b4847acd4d4972c96295
+  - enabled: 1
+    path: Assets/Stviga/Scenes/MainScene.unity
+    guid: ff78e1f49c8c005498d8833a46f5deee
+  - enabled: 1
+    path: Assets/AlexeyOvs/Scenes/MyGAmeScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
