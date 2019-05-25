@@ -5,9 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public GameObject lootAfterDeathPrefab;
-
-    [SerializeField]
-    protected int health;
+     
     [SerializeField]
     protected float speed;
     [SerializeField]
@@ -84,15 +82,15 @@ public class Enemy : MonoBehaviour {
 
     private void MoveToTarget()
     {
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.smoothDeltaTime);
-
-        Debug.Log(currentTarget + "current");
+        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.smoothDeltaTime); 
     }
 
 
     public void KillEnemy()
     {
         isDead = true;
+
+        Instantiate(lootAfterDeathPrefab, this.transform.position, Quaternion.identity);
 
         boxCollider.isTrigger = true;
         animator.SetTrigger(_animIdAndHash_Dead);
