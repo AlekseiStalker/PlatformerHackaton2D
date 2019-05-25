@@ -223,9 +223,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.CompareTag("Cherry"))
         {
-            Debug.Log("Take cherry");
-
-            GameManager.Instance.AddCherry();
+            if (_health < 3)
+            { 
+                _health++;
+            }
 
             Destroy(collision.gameObject, 0.2f);
 

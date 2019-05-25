@@ -11,9 +11,7 @@ public class GameManager : MonoBehaviour {
     public GameObject enemy;
 
     public int countGemsToWin = 5;
-    private int _curgemsCount = 0;
-    public int countCherryToWin = 7;
-    private int _curCherryCount = 0;
+    private int _curgemsCount = 0; 
 
     private void Awake()
     {
@@ -29,17 +27,11 @@ public class GameManager : MonoBehaviour {
 
         CheckOnWin(); 
     }
-
-    public void AddCherry()
-    {
-        _curCherryCount++;
-
-        CheckOnWin();
-    } 
+     
 
     private void CheckOnWin()
     {
-        if (_curgemsCount == countGemsToWin && _curCherryCount == countCherryToWin)
+        if (_curgemsCount == countGemsToWin)
         {
             //Create UI "Go to the dor"
             Debug.Log("Win!");
