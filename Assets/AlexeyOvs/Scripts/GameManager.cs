@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour {
 
     public GameObject goToDoorPanel;
     public GameObject InputControll;
+
+    public Text gems;
 
     public Animator animDoor;
 
@@ -29,7 +32,7 @@ public class GameManager : MonoBehaviour {
     public void AddGems()
     {
         _curgemsCount++;
-
+        gems.text = _curgemsCount.ToString();
         CheckOnWin(); 
     }
      
