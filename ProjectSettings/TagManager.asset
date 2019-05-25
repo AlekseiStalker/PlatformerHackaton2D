@@ -8,6 +8,7 @@ TagManager:
   - Box
   - Gem
   - Cherry
+  - Door
   layers:
   - Default
   - TransparentFX

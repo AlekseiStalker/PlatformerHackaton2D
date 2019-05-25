@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (_health == 0)
                 {
-                    _playerAnimation.Dead();
+                    PlayerDead();
                 }
                 else
                 {
@@ -170,13 +170,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void PlayerDead()
+    {
+        _playerAnimation.Dead();
+
+        GameManager.Instance.Restart();
+    }
+
     private bool IsPlayerHigherPos(float enemyY, float offset)
     {
         float posY = this.gameObject.transform.position.y;
-
-        Debug.Log(posY - enemyY);
-        Debug.Log("dif");
-
+         
         if (posY - enemyY >= offset)
         { 
             return true;
@@ -215,17 +219,17 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Gem"))
-        {
-            Debug.Log("Take gem");
+        { 
             GameManager.Instance.AddGems();
 
-            Destroy(collision.gameObject, 0.2f);
+            Destroy(collision.gameObject, 0.1f);
         }
         else if (collision.CompareTag("Cherry"))
         {
             if (_health < 3)
             { 
                 _health++;
+                slider.value = _health;
             }
 
             Destroy(collision.gameObject, 0.2f);

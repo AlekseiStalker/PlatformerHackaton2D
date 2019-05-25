@@ -6,9 +6,15 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
 
-    public PlayerController PlayerController;
+    public GameObject goToDoorPanel;
+    public GameObject InputControll;
 
-    public GameObject enemy;
+    public Animator animDoor;
+
+    public GameObject winPanel;
+
+    //public PlayerController PlayerController;
+    //public GameObject enemy;
 
     public int countGemsToWin = 5;
     private int _curgemsCount = 0; 
@@ -20,7 +26,6 @@ public class GameManager : MonoBehaviour {
             Instance = this;
         }
     } 
-     
     public void AddGems()
     {
         _curgemsCount++;
@@ -33,8 +38,25 @@ public class GameManager : MonoBehaviour {
     {
         if (_curgemsCount == countGemsToWin)
         {
-            //Create UI "Go to the dor"
-            Debug.Log("Win!");
+            goToDoorPanel.SetActive(true);
+            animDoor.SetTrigger("Door");
+            Invoke("Deactive", 7);
         }
+    }
+
+    public void Deactive()
+    {
+        goToDoorPanel.SetActive(false); 
+    }
+
+    public void ActiveWinPanel()
+    {
+        InputControll.SetActive(false);
+        Instantiate(winPanel);
+    }
+
+    public void Restart()
+    {
+        Application.LoadLevel(1);
     }
 }
