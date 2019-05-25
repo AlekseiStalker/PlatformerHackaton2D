@@ -84,9 +84,7 @@ public class Enemy : MonoBehaviour {
 
     private void MoveToTarget()
     {
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.smoothDeltaTime);
-
-        Debug.Log(currentTarget + "current");
+        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.smoothDeltaTime); 
     }
 
 

@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -192,11 +192,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 3
-  _jumpForce: 4
+  _jumpForce: 15
   _health: 3
   slider: {fileID: 0}
   pushForseUp: 2
-  PushHurtForce: 1.8
+  PushHurtForce: 7
 --- !u!95 &95150365739208442
 Animator:
   serializedVersion: 3

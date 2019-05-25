@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     PlayerAnimation _playerAnimation; 
     SpriteRenderer _playerSprite;
 
-    float _distanceToGroundForIdle = 1.2f;
+    float _distanceToGroundForIdle = 1.4f;
     WaitForSeconds _waitJumpDoing;
 
     private bool _isPushingHurt;
@@ -210,5 +210,25 @@ public class PlayerController : MonoBehaviour
     private void PushPlayerUp()
     {
         _rb2D.AddForce(Vector2.up * pushForseUp, ForceMode2D.Impulse);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Gem"))
+        {
+            Debug.Log("Take gem");
+            GameManager.Instance.AddGems();
+
+            Destroy(collision.gameObject, 0.2f);
+        }
+        else if (collision.CompareTag("Cherry"))
+        {
+            Debug.Log("Take cherry");
+
+            GameManager.Instance.AddCherry();
+
+            Destroy(collision.gameObject, 0.2f);
+
+        }
     }
 }
