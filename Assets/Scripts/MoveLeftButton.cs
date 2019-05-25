@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class MoveLeftButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+{
+
+    public PlayerController PlayerController;
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        PlayerController.MoveLeft = true;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        PlayerController.MoveLeft = false;
+
+        PlayerController.MoveStop();
+    }
+}
