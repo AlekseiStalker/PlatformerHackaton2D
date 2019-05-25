@@ -158,8 +158,8 @@ public class PlayerController : MonoBehaviour
             else
             {
                 if (_health == 0)
-                { 
-                    Debug.Log("PlayerDead");
+                {
+                    _playerAnimation.Dead();
                 }
                 else
                 {
