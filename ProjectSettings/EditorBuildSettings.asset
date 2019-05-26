@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stviga/Scenes/MainScene.unity
     guid: ff78e1f49c8c005498d8833a46f5deee
+  - enabled: 1
+    path: Assets/Nikolai/Assets_m/Scenes/Level_1.unity
+    guid: 39cbcccfb99c73d4a9da03151cffc14d
+  - enabled: 1
+    path: Assets/Nikolai/Assets_m/Scenes/Level_2.unity
+    guid: 5cceddca812ba3541a1c5860f7b9cedb
   m_configObjects: {}
