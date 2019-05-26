@@ -1618,6 +1618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputControll
       objectReference: {fileID: 0}
+    - target: {fileID: 1657111866651630, guid: 1ae7490007dda5c438a1ab93115e2061, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224188429347246076, guid: 1ae7490007dda5c438a1ab93115e2061,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32235,6 +32239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goToDoorPanel: {fileID: 226404961}
   InputControll: {fileID: 1657111866651630}
+  gems: {fileID: 0}
   animDoor: {fileID: 956118307}
   winPanel: {fileID: 3048325086962401400, guid: 4d07c731cbff51644890e529e5cf1e39,
     type: 3}
