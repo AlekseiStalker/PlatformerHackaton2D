@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour {
 
     public GameObject goToDoorPanel;
     public GameObject InputControll;
+    public GameObject PanelGems;
+    public float timeGemsPanelDisplay = 1.5f;
 
     public Text gems;
+    private Text _gemsLeftText;
 
     public Animator animDoor;
 
@@ -18,6 +21,7 @@ public class GameManager : MonoBehaviour {
 
     //public PlayerController PlayerController;
     //public GameObject enemy;
+    private GameObject _gemsPanel;
 
     public int countGemsToWin = 5;
     private int _curgemsCount = 0; 
@@ -28,7 +32,15 @@ public class GameManager : MonoBehaviour {
         {
             Instance = this;
         }
-    } 
+    }
+
+    private void Start()
+    {
+        _gemsPanel = Instantiate(PanelGems);
+        _gemsLeftText = _gemsPanel.GetComponentInChildren<Text>();
+        _gemsPanel.SetActive(false);
+    }
+
     public void AddGems()
     {
         _curgemsCount++;
@@ -61,5 +73,17 @@ public class GameManager : MonoBehaviour {
     public void Restart()
     {
         Application.LoadLevel(1);
+    }
+
+    public void ViewPanelGems()
+    {
+       
+
+        DeleteGemsPanel(gemsPanel);
+    }
+
+    private void DeleteGemsPanel(GameObject panel)
+    { 
+        Destroy(panel, timeGemsPanelDisplay);
     }
 }
